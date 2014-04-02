@@ -25,22 +25,50 @@ define([
     var oldText = {};
 
     // This returned object becomes the defined value of this module
-    return {
-        setText: function (id, text) {
-            var node = dom.byId(id);
-            oldText[id] = node.innerHTML;
-            node.innerHTML = text;
-        },
+    // return {
+    //     setText: function (id, text) {
+    //         var node = dom.byId(id);
+    //         oldText[id] = node.innerHTML;
+    //         node.innerHTML = text;
+    //     },
  
-        restoreText: function (id) {
-            var node = dom.byId(id);
-            node.innerHTML = oldText[id];
-            delete oldText[id];
-        }
-    };
+    //     restoreText: function (id) {
+    //         var node = dom.byId(id);
+    //         node.innerHTML = oldText[id];
+    //         delete oldText[id];
+    //     }
+    // };
 });
 
 /** JQuery **/
 
+//Autocomplete for card input
+$("#input0").autocomplete({source:CardNames});
 $("#input1").autocomplete({source:CardNames});
+$("#input2").autocomplete({source:CardNames});
+$("#input3").autocomplete({source:CardNames});
+$("#input4").autocomplete({source:CardNames});
+$("#input5").autocomplete({source:CardNames});
+$("#input6").autocomplete({source:CardNames});
+$("#input7").autocomplete({source:CardNames});
+$("#input8").autocomplete({source:CardNames});
+$("#input9").autocomplete({source:CardNames});
+$("#input10").autocomplete({source:CardNames});
+$("#input20").autocomplete({source:CardNames});
+$("#input21").autocomplete({source:CardNames});
+$("#input22").autocomplete({source:CardNames});
+$("#input23").autocomplete({source:CardNames});
+$("#input24").autocomplete({source:CardNames});
+$("#input25").autocomplete({source:CardNames});
+$("#input26").autocomplete({source:CardNames});
+$("#input27").autocomplete({source:CardNames});
+$("#input28").autocomplete({source:CardNames});
+$("#input29").autocomplete({source:CardNames});
+$("#input30").autocomplete({source:CardNames});
 
+
+//Updates level number from slider
+function updateSout(id, val) {
+    x = document.getElementById(id);
+    x.innerText = val;
+};
