@@ -23,13 +23,16 @@
 				<div class="jumbotron" id="jumbo1">
 				<br />
 					<div class="row">
-						<!--input id="stateSelect"-->
-						<div class="col-md-5">
-							<input type="text" id="input1" class="form-control">
+						<div class="input-group input-group-sm">
+							<input type="text" id="input1" class="form-control" placeholder="Enter Card Name"">
+							<span class="input-group-addon" id="sout1">6</span>
+
+							<div class="col-md-7">
+								<input id="slider1" class="form-control btn-primary" type="range" name="slider1" min="1" max="6" steps="1" value="6" onchange="updateSout('sout1', this.value);">
+							</div>
 						</div>
-						<div class="col-md-3">
-							<input id="range-bar1" class="form-control btn-primary" type="range" name="points" min="1" max="6" steps="1" value="6">
-						</div>
+
+						
 					</div>
 
 					
@@ -42,14 +45,7 @@
 			<div class="col-md-6">
 				<div class="jumbotron" id="jumbo2">
 				<br />
-					<div class="row">
-						<div class="col-md-5">
-							<input type="text" id="input11" class="form-control" placeholder="Enter Card Name">
-						</div>
-						<div class="col-md-3">
-							<input id="range-bar11" class="form-control btn-primary" type="range" name="points" min="1" max="6" steps="1" value="6">
-						</div>
-					</div>
+					
 					
 				</div>
 			</div>
@@ -62,6 +58,10 @@
 <script src="load/js/jquery-1.10.2.js"></script>
 <script src="load/js/jquery-ui-1.10.4.custom.js"></script>
 <script>
+	function updateSout(id, val) {
+    	x = document.getElementById(id);
+    	x.innerText = val;
+	};
     var dojoConfig = {
         async: true,
         packages: [{

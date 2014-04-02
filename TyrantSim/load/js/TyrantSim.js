@@ -43,3 +43,4 @@ define([
 /** JQuery **/
 
 $("#input1").autocomplete({source:CardNames});
+
