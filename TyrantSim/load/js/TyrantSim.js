@@ -1,3 +1,5 @@
+/** DOJO **/
+
 define([
     // The dojo/dom module is required by this module, so it goes
     // in this list of dependencies.
@@ -12,13 +14,13 @@ define([
 
     stateStore = new Memory({data: Cardlist});
 
-    var filteringSelect = new FilteringSelect({
-        id: "input1",
-        name: "card",
-        value: "Aegis",
-        store: stateStore,
-        searchAttr: "CardName"
-    }, "input1");
+    // filteringSelect = new FilteringSelect({
+    //     id: "input1",
+    //     name: "card",
+    //     value: "Aegis",
+    //     store: stateStore,
+    //     searchAttr: "CardName"
+    // }, "input1");
  
     var oldText = {};
 
@@ -38,17 +40,6 @@ define([
     };
 });
 
+/** JQuery **/
 
-require([
-    , "dojo/domReady!"
-], function(){
-    
-
-    var filteringSelect = new FilteringSelect({
-        id: "stateSelect",
-        name: "state",
-        value: "CA",
-        store: stateStore,
-        searchAttr: "name"
-    }, "stateSelect");
-});
+$("#input1").autocomplete({source:CardNames});

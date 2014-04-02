@@ -5,10 +5,13 @@
     <title>Zach's Sim</title>
     <link rel="stylesheet" type="text/css" href="load\css\bootflat\css\bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="load\css\bootflat\bootflat\css\bootflat.min.css">
-    <script src="http://tyrantsim.weebly.com/files/theme/Tyrantcardlist.js"></script>
+    <link href="load/css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <script src="load/js/Tyrantcardlist.js"></script>
+    <script src="load/js/CardNames.js"></script>
+
 </head>
 
-<body style="background-color: #4FC1E9;">
+<body class="claro" style="background-color: #4FC1E9;">
 
 	<div class="container documents">
 
@@ -22,7 +25,7 @@
 					<div class="row">
 						<!--input id="stateSelect"-->
 						<div class="col-md-5">
-							<input type="text" id="input1" class="form-control" placeholder="Enter Card Name">
+							<input type="text" id="input1" class="form-control">
 						</div>
 						<div class="col-md-3">
 							<input id="range-bar1" class="form-control btn-primary" type="range" name="points" min="1" max="6" steps="1" value="6">
@@ -56,6 +59,8 @@
 
 </body>
 
+<script src="load/js/jquery-1.10.2.js"></script>
+<script src="load/js/jquery-ui-1.10.4.custom.js"></script>
 <script>
     var dojoConfig = {
         async: true,
@@ -77,8 +82,5 @@
             TyrantSim.restoreText('greeting');
         }, 3000);
     });
-
-
-
-</script>
+ </script>
 </html>
