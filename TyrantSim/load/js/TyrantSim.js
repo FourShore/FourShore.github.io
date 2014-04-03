@@ -3,8 +3,8 @@
 define([
     // The dojo/dom module is required by this module, so it goes
     // in this list of dependencies.
-    'dojo/dom',"dojo/store/Memory", "dijit/form/FilteringSelect"
-], function(dom, Memory, FilteringSelect){
+    'dojo/dom', "dojo/on", "dojo/store/Memory", "dijit/form/FilteringSelect"
+], function(dom, on, Memory, FilteringSelect){
     // Once all modules in the dependency list have loaded, this
     // function is called to define the demo/myModule module.
     //
@@ -13,6 +13,8 @@ define([
     // passed in as subsequent arguments.
 
     //stateStore = new Memory({data: Cardlist});
+    p1Cards = [];
+    p2Cards = [];
 
     // filteringSelect = new FilteringSelect({
     //     id: "input1",
@@ -38,6 +40,34 @@ define([
     //         delete oldText[id];
     //     }
     // };
+
+    on(dom.byId("btn-sim"), "click", function(){
+        p1Cards = getPlayer1Cards();
+        p2Cards = getPlayer2Cards();
+
+    });
+
+    function getPlayer1Cards() {
+        var toReturnArray = [];
+        for (var i = 0; i <= 10; i++) {
+            if (dom.byId("input" + i).value != "") toReturnArray.push({
+                name: dom.byId("input" + i).value,
+                lvl: "Lv." + dom.byId("sout" + i).innerText
+            });
+        };
+        return toReturnArray;
+    };
+
+    function getPlayer2Cards() {
+        var toReturnArray = [];
+        for (var i = 20; i <= 30; i++) {
+            if (dom.byId("input" + i).value != "") toReturnArray.push({
+                name: dom.byId("input" + i).value,
+                lvl: "Lv." + dom.byId("sout" + i).innerText
+            });
+        };
+        return toReturnArray;
+    };
 });
 
 /** JQuery **/
@@ -66,9 +96,11 @@ $("#input28").autocomplete({source:CardNames});
 $("#input29").autocomplete({source:CardNames});
 $("#input30").autocomplete({source:CardNames});
 
+//$("#btn-sim").click()
 
 //Updates level number from slider
 function updateSout(id, val) {
     x = document.getElementById(id);
     x.innerText = val;
 };
+
