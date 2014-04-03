@@ -12,7 +12,7 @@ define([
     // function; additional modules in the dependency list would be
     // passed in as subsequent arguments.
 
-    stateStore = new Memory({data: Cardlist});
+    //stateStore = new Memory({data: Cardlist});
 
     // filteringSelect = new FilteringSelect({
     //     id: "input1",
@@ -22,7 +22,7 @@ define([
     //     searchAttr: "CardName"
     // }, "input1");
  
-    var oldText = {};
+    //var oldText = {};
 
     // This returned object becomes the defined value of this module
     // return {
