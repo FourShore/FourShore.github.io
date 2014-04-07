@@ -73,7 +73,7 @@ define([
 /** JQuery **/
 
 //Autocomplete for card input
-$("#input0").autocomplete({source:CardNames});
+$("#input0").autocomplete({source:CardNames, change: sliderChange("slider0")});
 $("#input1").autocomplete({source:CardNames});
 $("#input2").autocomplete({source:CardNames});
 $("#input3").autocomplete({source:CardNames});
@@ -96,11 +96,18 @@ $("#input28").autocomplete({source:CardNames});
 $("#input29").autocomplete({source:CardNames});
 $("#input30").autocomplete({source:CardNames});
 
+function sliderChange (id) {
+    x = document.getElementById(id);
+    x.setAttribute("max",4);
+    x.setAttribute("value",4);
+}
+
 //$("#btn-sim").click()
 
 //Updates level number from slider
 function updateSout(id, val) {
     x = document.getElementById(id);
     x.innerText = val;
+    //this.setAttribute("max",4);
 };
 
